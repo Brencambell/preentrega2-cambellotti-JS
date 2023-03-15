@@ -60,8 +60,7 @@ if (listxRespuesta === "s") {
 if (listxSi) {
     let nombrePersonaje = prompt("Mira la consola y verás el nombre e información de 4 personajes. Selecciona uno e ingresa el nombre aquí:"); 
     let nuevoPersonaje = personajes.find(personaje => personaje.nombre.toLowerCase() === nombrePersonaje.toLowerCase());
-    alert("¡Ahora vamos a tirar los dados para elegir la vida, fuerza y defensa de " + nuevoPersonaje + ". Dale click a aceptar y mira los resultados en consola");
-
+    alert("¡Ahora vamos a tirar los dados para elegir la vida, fuerza y defensa de " + nombrePersonaje + ". Dale click a aceptar y mira los resultados en consola");
 let vida, fuerza, defensa;
 let confirmar = false;
 while (!confirmar) {
