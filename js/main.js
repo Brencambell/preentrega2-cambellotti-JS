@@ -43,22 +43,24 @@ function mostrarDetalles(personaje) {
     console.log('Habilidad: ' + personaje.habilidad);
 };
 
-let listxRespuesta = prompt("¡Bienvenidx a Hollow Knight! Próximamente estaremos lanzando nuestro videojuego. Mientras tanto, te ofrecemos un demo para que puedas conocer más a los personajes. ¿Estás listx? s/n");
+let listxRespuesta = prompt("¡Bienvenidx a Hollow Knight! Próximamente estaremos lanzando nuestro videojuego. Mientras tanto, te ofrecemos un demo para que puedas conocer más a los personajes. ¿Estás listx? s/n")
 
 if (listxRespuesta === "s") {
+    listxSi = true;
     for (let i = 0; i < personajes.length; i+=1) {
         mostrarDetalles(personajes[i]);
-      }
+      }     
 } else if (listxRespuesta === "n") {
   alert("¡Que pena! Cuando estés listx, refresca la página y aquí estaremos.");
+} else if (listxRespuesta === null) {
 } else {
   alert("Respuesta inválida. Por favor, refresca la página y responde con s o n.");
 };
 
-let nombrePersonaje = prompt("Mira la consola y verás el nombre e información de 4 personajes. Selecciona uno e ingresa el nombre aquí:");
-let nuevoPersonaje = personajes.find(personaje => personaje.nombre.toLowerCase() === nombrePersonaje.toLowerCase());
-
-alert('¡Ahora vamos a tirar los dados para elegir la vida, fuerza y defensa de ${nombrePersonaje}!. Dale click a aceptar y mira los resultados en consola');
+if (listxSi) {
+    let nombrePersonaje = prompt("Mira la consola y verás el nombre e información de 4 personajes. Selecciona uno e ingresa el nombre aquí:"); 
+    let nuevoPersonaje = personajes.find(personaje => personaje.nombre.toLowerCase() === nombrePersonaje.toLowerCase());
+    alert("¡Ahora vamos a tirar los dados para elegir la vida, fuerza y defensa de " + nuevoPersonaje + ". Dale click a aceptar y mira los resultados en consola");
 
 let vida, fuerza, defensa;
 let confirmar = false;
@@ -90,5 +92,5 @@ let nuevoArray = [nuevoPersonaje].map(personaje => {
 });
 
 console.table(nuevoArray);
-
+};
 
